@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random User</title>
+    <style>
+        .contaner {
+            border: 1px solid red;
+            background-color: rgb(168, 155, 155);
+            padding: 10px;
+            border-radius: 20px;
+            width: 50%;
+            margin: 10px auto;
+            text-align: center;
+        }
+
+        img {
+            padding: 10px;
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>random users  </h1>
+    <button onclick="loadUsers()">View Users</button>
+    <blockusers id="info">
+
+    </blockusers>
+    <script>
+        const loadUsers = () => {
+            fetch(`https://randomuser.me/api/?results=50`)
+                .then(res => res.json())
+                .then(data => DisplayUsers(data))
+        }
+        const DisplayUsers = (users) => {
+            const allUsers = users.results
+            console.log(allUsers);
+            const div = document.getElementById('info');
+            for (let user of allUsers) {
+                allUsers.filter(user => {
+                    if (user.gender === 'female') {
+
+                        console.log(user);
+                        const p = document.createElement('p');
+                        p.classList.add('contaner');
+                        p.innerHTML = `Name: ${user.name.first} ${user.name.last} </br>
+                <b>Email: </b> ${user.email} <br>
+                <img src=${user.picture.large}>`;
+
+                        div.appendChild(p);
+                    }
+                })
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

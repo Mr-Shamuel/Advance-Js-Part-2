@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>kanye west</title>
+</head>
+
+<body>
+    <h1>kanye West </h1>
+    <button onclick="loadQuotes()">View Quotes</button>
+    <blockquote id="quote">
+
+    </blockquote>
+    <script>
+        const loadQuotes = () => {
+            fetch(`https://api.kanye.rest/`)
+                .then(res => res.json())
+                .then(data => DisplayQuote(data))
+        }
+        const DisplayQuote = (quote) => {
+            const quotes = document.getElementById('quote');
+            quotes.innerText = quote.quote;
+            
+
+        }
+
+
+
+    </script>
+</body>
+
+</html>

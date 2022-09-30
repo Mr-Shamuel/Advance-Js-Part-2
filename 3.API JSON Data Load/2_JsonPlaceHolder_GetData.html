@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Json api</title>
+</head>
+
+<body>
+
+    <button onclick="handleClick()">Load Name</button>
+    <button onclick="handleEmail()">Load Email</button>
+    <div id="users">
+
+    </div>
+
+    <script>
+        //load name 
+        function handleClick(){
+            fetch(`https://jsonplaceholder.typicode.com/users`)
+            .then(res=>res.json())
+            .then(data=>{ 
+              const div =   document.getElementById("users");
+            for(let  user of data){   
+                const p = document.createElement('p');
+                p.innerHTML = `Name: ${user.name}  <b>Email</b>:`;
+                div.appendChild(p);
+
+            }
+
+            })
+        }
+
+        /// load email
+
+        const handleEmail = () => {
+            fetch(`https://jsonplaceholder.typicode.com/users`)
+                .then(res => res.json())
+                .then(data => disPlayEmail(data))
+
+        }
+        const disPlayEmail = (emails) => {
+            const div = document.getElementById('users');
+            for (let email of emails) {
+                console.log(email.email)
+                const li = document.createElement('li');
+                li.innerHTML = email.email;
+                div.appendChild(li);
+
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>

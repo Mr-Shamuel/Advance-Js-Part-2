@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
+    <!-- MDB -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.css" rel="stylesheet" />
+   
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <style>
+        body {
+            background-color: #34495e;
+
+        }
+
+        .foodFactory {
+            font-size: 50px;
+        }
+
+        #foods {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        #foods2 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        #foodsDetails {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card {
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+
+        <a href="4.MealDb.html">
+
+            <h1 class="foodFactory text-center  fw-bold fs-1"><span class=" text-warning">🍔FOOD</span> 🍝<span
+                    class="text-warning">F</span>ACTORY 🍕
+                🔄
+        </a>
+
+        </h1>
+        <div class="input-group ">
+            <div class="form-outline mx-auto d-flex w-50 ">
+                <input type="search" id="input_text" class="form-control p-3 text-white" />
+                <label class="form-label p-3 text-white" for="form1">Search</label>
+                <button onclick="handleSearch()" type="button" class="btn btn-primary">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+
+        </div>
+
+        <div id="foodsDetails" class="">
+
+        </div>
+        <div id="foods" class="">
+
+        </div>
+
+        <main id="foods2">
+
+        </main>
+
+    </div>
+
+
+
+
+
+    <script src="./4_Meal.js"> </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/5.0.0/mdb.min.js"></script>
+
+</body>
+
+</html>
